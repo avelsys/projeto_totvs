@@ -10,6 +10,7 @@ Para não darmos o azar de pegarmos os 2 serviços fora do ar, contaremos com a 
 (https://docs.awesomeapi.com.br/api-cep) para diminuírmos ainda mais o risco do nosso cliente receber uma resposta
 de erro.
 
+
 ## 🚀 Aplicações
 ```
 pasta onde ficam os executáveis \projeto_totvs\bin
@@ -22,7 +23,8 @@ TestesCEPClient.exe -> Testes unitário
 
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
 
-Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
+Criado com Delphi utilizando Biblioteca Horse para criação de API 
+
 
 ### 📋 Pré-requisitos
 
