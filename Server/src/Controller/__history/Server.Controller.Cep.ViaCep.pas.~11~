@@ -1,0 +1,44 @@
+unit Server.Controller.Cep.ViaCep;
+
+interface
+
+uses
+  System.Classes,
+  System.SysUtils,
+  System.JSON, IdHTTP,
+  Horse,
+  Server.Model.Cep.Interfaces,
+  Server.Classes.Constantes;
+
+type
+  TControllerCepViaCep = class(TInterfacedObject,  IModelCep)
+  public
+    class function New: IModelCep;
+    function ConsultaCep(const ACep: string): TJSONObject;
+    function IsOnLine: boolean;
+  end;
+
+implementation
+
+{ TControllerCepViaCep }
+
+function TControllerCepViaCep.ConsultaCep(const ACep: string): TJSONObject;
+var
+  LRequestHTTP: TIdHTTP;
+  Response: string;
+begin
+  LRequestHTTP := TIdHTTP.Create(nil);
+  try
+    Response  := LRequestHTTP.Get(Format(C_API_RESQUEST_CEP_VIACEP,[ACep]));
+    Result    := TJSONObject.ParseJSONValue(Response) as TJSONObject;
+  finally
+    LRequestHTTP.Free;
+  end;
+end;
+
+class function TControllerCepViaCep.New: IModelCep;
+begin
+  result := Self.create;
+end;
+
+end.

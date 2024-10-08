@@ -1,0 +1,129 @@
+unit Client.Controller.Cep;
+
+interface
+
+uses
+  System.Net.HttpClient,
+  System.JSON,
+  System.SysUtils,
+  System.Generics.Collections,
+  System.Rtti,
+  Vcl.StdCtrls,
+  Vcl.Dialogs,
+  Client.Model.Cep.Interfaces,
+  Client.Classe.Constantes,
+  Commons.DTO.Cep;
+
+type
+  IControllerBuscaCepService<T:Class, constructor> = class(TInterfacedObject, IModelBuscaCepService<T>)
+  private
+    FClassDTO: T;
+    FCep: string;
+    FProcRetorno: TNotifyEventRetornoCEP;
+    FListaCampos: TListaRetornoCampos;
+    procedure ConsultaCepApi;
+    procedure PegarDadosJSON(const ARetornoJSON: TJSONObject);
+    constructor Create;
+  public
+    class function New: IModelBuscaCepService<T>;
+
+    function SetRetorno(const AProcedureRetono:TNotifyEventRetornoCEP): IModelBuscaCepService<T>;
+    function ConsultaCep(const ACep: string): IModelBuscaCepService<T>;
+
+    destructor Destroy; override;
+  end;
+
+implementation
+
+{ IControllerBuscaCepService }
+
+class function IControllerBuscaCepService<T>.New: IModelBuscaCepService<T>;
+begin
+  Result := Self.Create;
+end;
+
+constructor IControllerBuscaCepService<T>.Create;
+begin
+  FClassDTO     := T.Create;
+  FListaCampos  := TListaRetornoCampos.Create;
+end;
+
+destructor IControllerBuscaCepService<T>.Destroy;
+begin
+  if Assigned(FClassDTO) then
+    FClassDTO.free;
+
+  if Assigned(FListaCampos) then
+    FListaCampos.free;
+
+  inherited;
+end;
+
+function IControllerBuscaCepService<T>.SetRetorno(
+  const AProcedureRetono: TNotifyEventRetornoCEP): IModelBuscaCepService<T>;
+begin
+  FProcRetorno := AProcedureRetono;
+end;
+
+function IControllerBuscaCepService<T>.ConsultaCep(
+  const ACep: string): IModelBuscaCepService<T>;
+begin
+  FCep := ACep.Trim;
+  ConsultaCepApi;
+  if (FListaCampos.Count > 0) and Assigned(FProcRetorno) then
+    FProcRetorno(FListaCampos);
+end;
+
+procedure IControllerBuscaCepService<T>.ConsultaCepApi;
+var
+  LHTTPClient: THTTPClient;
+  LResponse: IHTTPResponse;
+  LBaseURL: string;
+  LJSONResponse: TJSONObject;
+  LCEP, Logradouro, Bairro: string;
+begin
+  LHTTPClient := THTTPClient.Create;
+  try
+    LBaseURL  := format(C_APICEP_HOST,[FCep]) ;
+    LResponse := LHTTPClient.Get(LBaseURL);
+
+    if LResponse.StatusCode = 200 then
+    begin
+      LJSONResponse := TJSONObject.ParseJSONValue(LResponse.ContentAsString) as TJSONObject;
+      try
+        PegarDadosJSON(LJSONResponse)
+      finally
+        LJSONResponse.Free;
+      end;
+    end
+    else
+    begin
+      ShowMessage('Erro ao consumir a API: ' + IntToStr(LResponse.StatusCode));
+    end;
+  finally
+    LHTTPClient.Free;
+  end;
+end;
+
+procedure IControllerBuscaCepService<T>.PegarDadosJSON(const ARetornoJSON: TJSONObject);
+var
+  LContexto: TRttiContext;
+  LTipo: TRttiType;
+  LPropriedade: TRttiProperty;
+  LJSValor: TJSONValue;
+begin
+  LContexto := TRttiContext.Create;
+  try
+    LTipo := LContexto.GetType(TypeInfo(T));
+    for LPropriedade in LTipo.GetProperties do
+    begin
+      LJSValor := ARetornoJSON.FindValue(LPropriedade.Name);
+      if LJSValor <> nil then
+        FListaCampos.Add(LPropriedade.Name, LJSValor.Value)
+    end;
+  finally
+    LContexto.Free;
+  end;
+end;
+
+end.

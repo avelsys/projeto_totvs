@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{08D58EAC-523F-41A0-A8FC-C89F8FB67D98}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Server\CEPServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Client\CEPClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testes\src\TestesCEPClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CEPServer">
+        <MSBuild Projects="Server\CEPServer.dproj"/>
+    </Target>
+    <Target Name="CEPServer:Clean">
+        <MSBuild Projects="Server\CEPServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CEPServer:Make">
+        <MSBuild Projects="Server\CEPServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CEPClient">
+        <MSBuild Projects="Client\CEPClient.dproj"/>
+    </Target>
+    <Target Name="CEPClient:Clean">
+        <MSBuild Projects="Client\CEPClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CEPClient:Make">
+        <MSBuild Projects="Client\CEPClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestesCEPClient">
+        <MSBuild Projects="Testes\src\TestesCEPClient.dproj"/>
+    </Target>
+    <Target Name="TestesCEPClient:Clean">
+        <MSBuild Projects="Testes\src\TestesCEPClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestesCEPClient:Make">
+        <MSBuild Projects="Testes\src\TestesCEPClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CEPServer;CEPClient;TestesCEPClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CEPServer:Clean;CEPClient:Clean;TestesCEPClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CEPServer:Make;CEPClient:Make;TestesCEPClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

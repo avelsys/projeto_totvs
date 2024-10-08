@@ -1,0 +1,54 @@
+unit Client.View.Main;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.StdCtrls,
+  Vcl.ExtCtrls,
+  Client.Model.Cep.Interfaces,
+  Commons.DTO.Cep;
+
+type
+  TViewMain = class(TForm)
+    pnlCep: TPanel;
+    lblCep: TLabel;
+    edtCep: TEdit;
+    btnConsultar: TButton;
+    pnlLogradouro: TPanel;
+    lblLogradouro: TLabel;
+    lblDadoLogradouro: TLabel;
+    pnlComplemento: TPanel;
+    lblCompemento: TLabel;
+    lblDadoComplemento: TLabel;
+    pnlBairro: TPanel;
+    lblBairro: TLabel;
+    lblDadoBairro: TLabel;
+    pnlCidade: TPanel;
+    lblCidade: TLabel;
+    lblDadoCidade: TLabel;
+    pnlUF: TPanel;
+    lblUF: TLabel;
+    lblDadoUF: TLabel;
+    lblFonte: TLabel;
+    lblDadoFonte: TLabel;
+  private
+    FService: IModelBuscaCepService<TCepDTO>;
+  end;
+
+var
+  ViewMain: TViewMain;
+
+implementation
+
+{$R *.dfm}
+
+end.

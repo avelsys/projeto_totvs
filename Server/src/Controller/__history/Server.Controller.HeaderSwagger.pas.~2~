@@ -1,0 +1,12 @@
+unit Server.Controller.HeaderSwagger;
+
+interface
+uses
+  System.SysUtils,
+  System.Classes,
+  Horse.GBSwagger,
+  SGE.Commons.Constantes;
+
+implementation
+
+end.

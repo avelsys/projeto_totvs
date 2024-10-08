@@ -1,0 +1,24 @@
+unit Server.Controller.BuscaCep;
+
+interface
+
+uses
+  Horse.GBSwagger,
+  Server.Classes.Constantes,
+  Commons.DTO.Erro;
+
+type
+  [SwagPath('buscacep','Serviço para consulta de Ceps')]
+  TControllerBuscaCep = class(THorseGBSwagger)
+  public
+    [SwagGET('{cep}','Digite o Cep.')]
+    [SwagParamPath('cep','Cep')]
+    [SwagResponse(200, TSetorDTO)]
+    [SwagResponse(404, TCepDTO)]
+    procedure Obter;
+
+  end;
+
+implementation
+
+end.

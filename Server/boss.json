@@ -1,0 +1,17 @@
+{
+	"name": "Server",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./src",
+	"projects": [],
+	"dependencies": {
+		"github.com/hashload/horse": "^3.1.6",
+		"https://github.com/gabrielbaltazar/gbswagger": "^3.0.7",
+		"https://github.com/hashload/handle-exception": "^0.1.9",
+		"https://github.com/hashload/horse-cors": "^1.0.6",
+		"https://github.com/hashload/horse-jwt": "^2.0.14",
+		"https://github.com/hashload/horse-logger-provider-logfile": "^1.0.11",
+		"https://github.com/hashload/jhonson": "^1.1.9"
+	}
+}

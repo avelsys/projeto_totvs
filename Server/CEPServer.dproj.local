@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/10/07 17:22:55.000.296,C:\Users\aveli\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Server.dproj</Transaction>
+    <Transaction>2024/10/07 17:42:45.000.425,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 17:43:45.000.907,D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Classes\Server.Classes.Constantes.pas</Transaction>
+    <Transaction>2024/10/07 17:49:08.000.297,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 17:50:19.000.557,D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Controller\Server.Controller.HeaderSwagger.pas</Transaction>
+    <Transaction>2024/10/07 18:53:11.000.924,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 18:53:55.000.318,D:\projetos\EMPRESAS_TESTES\CODGOX\Commons\Commons.DTO.Erro.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 18:56:32.000.488,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 18:57:00.000.616,D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Model\Server.Model.Cep.Interfaces.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 19:06:16.000.978,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 19:06:41.000.032,D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Controller\Server.Controller.Cep.ViaCep.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 19:17:03.000.600,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 19:17:35.000.209,D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Controller\Server.Controller.BuscaCep.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 19:24:51.000.713,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 19:25:09.000.652,D:\projetos\EMPRESAS_TESTES\CODGOX\Commons\Commons.DTO.Cep.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 19:36:51.000.691,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 19:37:26.000.410,D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Controller\Server.Controller.Cep.Factory.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 19:54:16.000.981,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 19:54:37.000.136,D:\projetos\EMPRESAS_TESTES\CODGOX\Commons\Commons.Funcoes.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 19:59:05.000.648,D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Controller\Server.Controller.BuscaCep.pas=</Transaction>
+    <Transaction>2024/10/07 19:59:44.000.452,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Service\Server.Controller.BuscaCep.pas</Transaction>
+    <Transaction>2024/10/07 19:59:54.000.921,D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Service\Server.Service.BuscaCep.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Service\Server.Controller.BuscaCep.pas</Transaction>
+    <Transaction>2024/10/07 21:17:26.000.600,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 21:18:04.000.595,D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Controller\Server.Controller.Cep.ApiCep.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 21:21:32.000.710,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/07 21:22:18.000.237,D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Controller\Server.Controller.Cep.Awessomeapicep.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/08 10:19:21.000.937,=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/08 10:19:39.000.310,D:\projetos\EMPRESAS_TESTES\CODGOX\Server\src\Classes\Server.Classes.Helpers.pas=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Unit1.pas</Transaction>
+    <Transaction>2024/10/08 12:52:52.000.219,=D:\projetos\EMPRESAS_TESTES\CODGOX\Commons\DTO\Commons.DTO.Erro.pas</Transaction>
+    <Transaction>2024/10/08 12:52:52.000.184,=D:\projetos\EMPRESAS_TESTES\CODGOX\Commons\DTO\Commons.DTO.Cep.pas</Transaction>
+    <Transaction>2024/10/08 13:59:14.000.922,D:\projetos\EMPRESAS_TESTES\CODGOX\Server\CEPServer.dproj=D:\projetos\EMPRESAS_TESTES\CODGOX\Server\Server.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
